@@ -1,2 +1,0 @@
-## NOTES ABOUT WORK DONE
-

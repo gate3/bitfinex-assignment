@@ -1,6 +1,5 @@
 # Bitfinex Assignment
 
-
 ### How Does It Work
 - We have multiple peers that have the ability to send and receive messages
 - Each peer can perform a buy/sell order
@@ -24,6 +23,7 @@ The orderbook is a priority queue, which operates on `Price-Time-Priority`, wher
 - To ensure we have an atomic transaction when using the mitigation method above, I will have a timeout setting. Once the timeout has expired and the transaction has not been completed, the orders will be enqueued again.
 - I would find a better way to identify peers instead of the current peer id, I would assign a uuid which is broadcasted by all peers once connection has been established. The current peer id becomes wrong if a peer gets disconnected.
 - To make things more secure, I would introduce an escrow method, which will take custody of the sell order till transaction is completed and settle the buyer
+- I would introduce an order id which will help with parallel processing. Currently the project only works with a single order at a time and only the order at the top of the queue. Having an order id, would allow working with orders at any point in the order book. An order Id will also help with eventual consistency.
 
 
 ### What Was Not Completed
